@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "picallo-admin"
+version = "0.1.0"
+description = ""
+authors = ["RomanZorkin <zorkin.roman@gmail.com>"]
+readme = "README.md"
+packages = [{include = "picallo_admin"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.88.0"
+piccolo-admin = "^0.39.0"
+
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^0.991"
+wemake-python-styleguide = "^0.17.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
