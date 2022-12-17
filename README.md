@@ -21,3 +21,24 @@ python main.py
 ```bash
 piccolo tester run
 ```
+
+
+python -m venv venv
+source venv/bin/activate
+pip install poetry
+poetry install
+
+make .env file
+
+
+docker-compose up -d
+uvicorn app:app --port 1400 --host 0.0.0.0
+
+piccolo migrations forwards session_auth
+piccolo migrations forwards user
+piccolo user create
+piccolo migrations new home --auto
+piccolo migrations forwards home
+
+vasy
+@95147fg
