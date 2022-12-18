@@ -1,44 +1,41 @@
-# piccolo_project
+# Piccolo Admin
+Admin panel for  https://github.com/RomanZorkin/fitnes_endpoint
 
-## Setup
-
-piccolo asgi new
-
-### Install requirements
-
-```bash
-pip install -r requirements.txt
-```
-
-### Getting started guide
+This service start database & admin web service.
+#
+## Installation:
 
 ```bash
-python main.py
-```
-
-### Running tests
-
-```bash
-piccolo tester run
-```
-
-
 python -m venv venv
 source venv/bin/activate
 pip install poetry
 poetry install
+```
+#
+## You need create .env file with rules:
+```
+DATABASE_URL=://vasy:123@db:5432/piccolo_admin
 
-make .env file
-
-
-docker-compose up -d
-uvicorn app:app --port 1400 --host 0.0.0.0
-
+# to create postgres in container
+POSTGRES_PASSWORD=123
+POSTGRES_USER=vasy
+POSTGRES_DB=piccolo_admin
+```
+#
+## You need create table scheme in DB, add admin user, just input commands:
+```bash
 piccolo migrations forwards session_auth
 piccolo migrations forwards user
 piccolo user create
 piccolo migrations new home --auto
 piccolo migrations forwards home
+```
+#
+## Now we can start service:
 
+```bash
+make run
+```
+### 
 vasy
 @95147fg
